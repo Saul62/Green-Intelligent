@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "password": "admin123",
+            "role": "管理员",
+            "register_time": "2025-01-01"
+        },
+        {
+            "username": "farmer1",
+            "password": "farm2025",
+            "role": "农户",
+            "register_time": "2025-02-15"
+        },
+        {
+            "username": "customer1",
+            "password": "cust2025",
+            "role": "消费者",
+            "register_time": "2025-03-01"
+        },
+        {
+            "username": "business1",
+            "password": "busi2025",
+            "role": "商家",
+            "register_time": "2025-03-15"
+        },
+        {
+            "username": "guest",
+            "password": "guest123",
+            "role": "游客",
+            "register_time": "2025-04-01"
+        }
+    ]
+}
