@@ -160,7 +160,7 @@ def load_products():
             "trace_id": "XM12345", 
             "stock": 100,
             "description": "纯天然有机种植，无农药残留，口感醇厚",
-            "image": "images/有机大米.png",
+            "image": "images/resized/有机大米.png",
             "carbon": 0.5,
             "category": "粮油"
         },
@@ -170,7 +170,7 @@ def load_products():
             "trace_id": "CY13579",
             "stock": 120,
             "description": "高山云雾茶，清香醇厚，回甘持久",
-            "image": "images/茶叶.png",
+            "image": "images/resized/茶叶.png",
             "carbon": 0.2,
             "category": "饮品"
         },
@@ -180,7 +180,7 @@ def load_products():
             "trace_id": "MF24680",
             "stock": 150,
             "description": "优质小麦研磨，细腻柔滑，适合烘焙",
-            "image": "images/面粉.png",
+            "image": "images/resized/面粉.png",
             "carbon": 0.3,
             "category": "粮油"
         },
@@ -190,7 +190,7 @@ def load_products():
             "trace_id": "SY35791",
             "stock": 100,
             "description": "物理压榨，零添加，健康食用",
-            "image": "images/食用油.png",
+            "image": "images/resized/食用油.png",
             "carbon": 0.4,
             "category": "粮油"
         },
@@ -200,7 +200,7 @@ def load_products():
             "trace_id": "AP67890", 
             "stock": 150,
             "description": "低碳种植技术，减少30%碳排放，果肉脆甜",
-            "image": "images/苹果.png",
+            "image": "images/resized/苹果.png",
             "carbon": 0.3,
             "category": "水果"
         },
@@ -210,7 +210,7 @@ def load_products():
             "trace_id": "HM54321", 
             "stock": 80,
             "description": "高山野生蜂蜜，纯天然无添加，营养丰富",
-            "image": "images/生态蜂蜜.png",
+            "image": "images/resized/生态蜂蜜.png",
             "carbon": 0.2,
             "category": "调味品"
         },
@@ -220,7 +220,7 @@ def load_products():
             "trace_id": "BS78901", 
             "stock": 200,
             "description": "富含铁质和维生素，有机种植，新鲜采摘",
-            "image": "images/菠菜.png",
+            "image": "images/resized/菠菜.png",
             "carbon": 0.1,
             "category": "蔬菜"
         },
@@ -230,7 +230,7 @@ def load_products():
             "trace_id": "JD24680", 
             "stock": 120,
             "description": "散养土鸡产蛋，蛋黄色泽金黄，营养丰富",
-            "image": "images/鸡蛋.png",
+            "image": "images/resized/鸡蛋.png",
             "carbon": 0.4,
             "category": "禽蛋"
         }
@@ -464,7 +464,10 @@ elif page == "农产品自营商城":
                         </div>
                         """, unsafe_allow_html=True)
                         
-                        st.image(product_info["image"], use_container_width=True, width=300)
+                        try:
+                            st.image(product_info["image"], use_container_width=True, width=300)
+                        except Exception as e:
+                            st.image("images/resized/placeholder.svg", use_container_width=True, width=300)
                         st.write(product_info["description"])
                         
                         # 区块链溯源查询
@@ -510,12 +513,12 @@ elif page == "农产家庭直供":
     # 商品网格布局
     cols = st.columns(3)
     fresh_items_list = [
-        {"name": "生态西红柿", "price": 8, "origin": "河北农场", "delivery_time": 6, "image": "images/西红柿.png"},
-        {"name": "有机白菜", "price": 6, "origin": "山东农场", "delivery_time": 5, "image": "images/白菜.png"},
-        {"name": "新鲜土豆", "price": 5, "origin": "甘肃农场", "delivery_time": 8, "image": "images/土豆.png"},
-        {"name": "紫皮茄子", "price": 7, "origin": "河南农场", "delivery_time": 6, "image": "images/茄子.png"},
-        {"name": "山区胡萝卜", "price": 4, "origin": "陕西农场", "delivery_time": 7, "image": "images/胡萝卜.png"},
-        {"name": "新鲜辣椒", "price": 6, "origin": "四川农场", "delivery_time": 6, "image": "images/辣椒.png"}
+        {"name": "生态西红柿", "price": 8, "origin": "河北农场", "delivery_time": 6, "image": "images/resized/西红柿.png"},
+        {"name": "有机白菜", "price": 6, "origin": "山东农场", "delivery_time": 5, "image": "images/resized/白菜.png"},
+        {"name": "新鲜土豆", "price": 5, "origin": "甘肃农场", "delivery_time": 8, "image": "images/resized/土豆.png"},
+        {"name": "紫皮茄子", "price": 7, "origin": "河南农场", "delivery_time": 6, "image": "images/resized/茄子.png"},
+        {"name": "山区胡萝卜", "price": 4, "origin": "陕西农场", "delivery_time": 7, "image": "images/resized/胡萝卜.png"},
+        {"name": "新鲜辣椒", "price": 6, "origin": "四川农场", "delivery_time": 6, "image": "images/resized/辣椒.png"}
     ]
     
     for i, item in enumerate(fresh_items_list):
