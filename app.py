@@ -465,9 +465,9 @@ elif page == "农产品自营商城":
                         """, unsafe_allow_html=True)
                         
                         try:
-                            st.image(product_info["image"], use_container_width=True, width=300)
+                            st.image(product_info["image"], width=300)
                         except Exception as e:
-                            st.image("images/resized/placeholder.svg", use_container_width=True, width=300)
+                            st.image("images/resized/placeholder.svg", width=300)
                         st.write(product_info["description"])
                         
                         # 区块链溯源查询
