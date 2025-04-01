@@ -523,7 +523,7 @@ elif page == "农产家庭直供":
     
     for i, item in enumerate(fresh_items_list):
         with cols[i % 3]:
-            st.image(item["image"], caption=item["name"], use_container_width=True)
+            st.image(item["image"], caption=item["name"], width=300)
             st.markdown(f"""
             <div class='card'>
                 <p>价格：¥{item['price']}/斤</p>
@@ -826,7 +826,7 @@ elif page == "共享农庄模块":
         # 根据选择显示对应农场的照片
         farm_image_path = os.path.join("images", f"{farm_location}.png")
         if os.path.exists(farm_image_path):
-            st.image(farm_image_path, caption=f"{farm_location}实景", use_container_width=True)
+            st.image(farm_image_path, caption=f"{farm_location}实景", width=600)
         plot_size = st.selectbox("地块面积", ["5平米", "10平米", "20平米"])
         
         # 作物选择
@@ -951,7 +951,7 @@ elif page == "共享农庄模块":
     with col1:
         farm_image_path = os.path.join("images", f"{farm_to_view}.png")
         if os.path.exists(farm_image_path):
-            st.image(farm_image_path, caption=f"{farm_to_view}实景", use_container_width=True)
+            st.image(farm_image_path, caption=f"{farm_to_view}实景", width=600)
         else:
             st.warning("农场实景图片暂未上传")
     
@@ -1014,7 +1014,7 @@ elif page == "会员民宿模块":
         homestay_idx = homestays.index(homestay)
         
         # 显示民宿图片
-        st.image(images[homestay_idx], caption=homestay, use_container_width=True)
+        st.image(images[homestay_idx], caption=homestay, width=400)
         
         # 预订信息
         st.subheader("预订信息")
@@ -1138,11 +1138,11 @@ elif page == "乡村亲子模块":
         # 显示农耕体验活动图片
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.image("images/插秧体验.png", caption="插秧体验", use_container_width=True)
+            st.image("images/插秧体验.png", caption="插秧体验", width=300)
         with col2:
-            st.image("images/蔬菜采摘.png", caption="蔬菜采摘", use_container_width=True)
+            st.image("images/蔬菜采摘.png", caption="蔬菜采摘", width=300)
         with col3:
-            st.image("images/喂养小动物.png", caption="喂养小动物", use_container_width=True)
+            st.image("images/喂养小动物.png", caption="喂养小动物", width=300)
     elif activity_type == "自然探索":
         activities = ["昆虫观察", "植物标本制作", "野外定向"]
     elif activity_type == "手工制作":
